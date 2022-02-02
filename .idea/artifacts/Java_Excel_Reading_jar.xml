@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Java-Excel-Reading:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Java_Excel_Reading_jar</output-path>
+    <root id="archive" name="Java-Excel-Reading.jar">
+      <element id="module-output" name="Java-Excel-Reading" />
+    </root>
+  </artifact>
+</component>
