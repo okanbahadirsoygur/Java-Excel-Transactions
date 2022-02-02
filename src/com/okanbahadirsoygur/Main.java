@@ -19,18 +19,21 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+
 
         Scanner userInput = new Scanner(System.in);
         String komut = "0";
         while (true && !komut.equals( "4")){
 
-            System.out.println("***    Java Excel Transactions Application ***");
-            System.out.println("* (1)        EXCEL DOSYASINI KONTROL ET    ***");
-            System.out.println("* (2)           EXCEL DOSYASINI OKU        ***");
-            System.out.println("* (3)              EXCEL HUCRE OKU         ***");
-            System.out.println("* (4)                 ÇIKIŞ YAP            ***");
+            System.out.println("************** Java Excel İşlemleri **********");
+            System.out.println("*                                            *");
+            System.out.println("* (1)        EXCEL DOSYASINI KONTROL ET      *");
+            System.out.println("* (2)           EXCEL DOSYASINI OKU          *");
+            System.out.println("* (3)              EXCEL HUCRE OKU           *");
+            System.out.println("* (4)                 ÇIKIŞ YAP              *");
+            System.out.println("*                                            *");
             System.out.println("**********************************************");
+            System.out.print("İşlem Numarası:");
 
             komut = userInput.nextLine();
 
