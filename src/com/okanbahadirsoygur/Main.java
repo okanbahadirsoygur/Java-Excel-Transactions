@@ -25,7 +25,7 @@ public class Main {
         String komut = "0";
         while (true && !komut.equals( "3")){
 
-            System.out.println("*** Java Excel Reading Console Application ***");
+            System.out.println("***    Java Excel Transactions Application ***");
             System.out.println("* (1)        EXCEL DOSYASINI KONTROL ET    ***");
             System.out.println("* (2)           EXCEL DOSYASINI OKU        ***");
             System.out.println("* (3)                 ÇIKIŞ YAP            ***");
