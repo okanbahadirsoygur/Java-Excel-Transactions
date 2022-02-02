@@ -23,12 +23,13 @@ public class Main {
 
         Scanner userInput = new Scanner(System.in);
         String komut = "0";
-        while (true && !komut.equals( "3")){
+        while (true && !komut.equals( "4")){
 
             System.out.println("***    Java Excel Transactions Application ***");
             System.out.println("* (1)        EXCEL DOSYASINI KONTROL ET    ***");
             System.out.println("* (2)           EXCEL DOSYASINI OKU        ***");
-            System.out.println("* (3)                 ÇIKIŞ YAP            ***");
+            System.out.println("* (3)              EXCEL HUCRE OKU         ***");
+            System.out.println("* (4)                 ÇIKIŞ YAP            ***");
             System.out.println("**********************************************");
 
             komut = userInput.nextLine();
@@ -63,7 +64,13 @@ public class Main {
                 excelDosyasiniOku(userInput);
             break;
 
+
             case "3":
+                konsolTemizle();
+                hucreOku(userInput);
+                break;
+
+            case "4":
             cikis();
             break;
 
@@ -71,6 +78,27 @@ public class Main {
 
     }
 
+
+
+
+    public static void hucreOku(Scanner userInput){
+
+        System.out.print("Satır:");
+        int satir = Integer.parseInt(userInput.nextLine());
+        System.out.print("Sütun:");
+        int sutun = Integer.parseInt(userInput.nextLine());
+
+        String hucre = hucreGetir(satir,sutun);
+
+        if(hucre != null)
+            System.out.println(hucre);
+
+        System.out.println("Anamenü'ye dönmek için ENTER tuşuna basın...");
+        userInput.nextLine();
+
+
+
+    }
 
     public static void excelKontrol(Scanner userInput){
         File f = new File("data.xls");
@@ -147,6 +175,35 @@ public class Main {
         System.out.println("Anamenü'ye dönmek için ENTER tuşuna basın...");
 
         userInput.nextLine();
+    }
+
+    public static String hucreGetir(int satir, int sutun){
+      try {
+        POIFSFileSystem fs = new POIFSFileSystem(new FileInputStream("data.xls"));
+        HSSFWorkbook wb = new HSSFWorkbook(fs);
+        HSSFSheet sheet = wb.getSheetAt(0);
+        HSSFRow row;
+        HSSFCell cell;
+
+        row = sheet.getRow(satir);
+
+        cell = row.getCell((short) sutun);
+          if(cell != null) {
+              return cell+"";
+
+          }else {
+
+              return null;
+          }
+
+        }catch (Exception e){
+
+        System.out.println(e+"");
+        return null;
+
+       }
+
+
     }
 
 
